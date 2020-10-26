@@ -1,0 +1,28 @@
+name: Test
+on:
+    push:
+        branches:
+            - main
+    pull_request:
+        branches:
+            - main
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 14
+            - uses: bahmutov/npm-install@v1
+
+            - name: Test 0
+              run: yarn test -t=0
+            - name: Test 1
+              run: yarn test -t=1
+            - name: Test 2
+              run: yarn test -t=2
+            - name: Test 3
+              run: yarn test -t=3
+            # - name: Test 4
+            #   run: yarn test -t=4
