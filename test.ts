@@ -1,4 +1,4 @@
-import fs from 'fs/promises'
+import { promises as fs } from 'fs'
 import { join } from 'path'
 import ts, { TransformerFactory, SourceFile } from 'typescript'
 // @ts-ignore
